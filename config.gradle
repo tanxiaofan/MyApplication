@@ -1,0 +1,48 @@
+ext {
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: "27.0.3",
+            minSdkVersion    : 17,
+            targetSdkVersion : 27,
+            versionCode      : 1,
+            versionName      : '1.0.0',
+            VSupportSdk      : '27.0.2',
+            VConstraintLayout: '1.0.2',
+
+            VRxlifecycle2    : '2.0.1',
+            VRxjava          : '2.0.1',
+            VRxpermissions   : '0.9.5@aar',
+            VXlog            : '1.4.0',
+            VOkhttp          : '3.10.0',
+            VRetrofit        : '2.4.0',
+            VGson            : '2.8.4',
+            VButterknife     : '8.8.1',
+            VEventbus        : '3.1.1',
+            VGlide           : '4.7.1',
+            VMultidex        : '1.0.2',
+    ]
+
+    dependencies = [
+            "constraint-layout"     : "com.android.support.constraint:constraint-layout:${android["VConstraintLayout"]}",
+            "appcompat-v7"          : "com.android.support:appcompat-v7:${android["VSupportSdk"]}",
+            "recyclerview-v7"       : "com.android.support:recyclerview-v7:${android["VSupportSdk"]}",
+            "cardview-v7"           : "com.android.support:cardview-v7:${android["VSupportSdk"]}",
+            "rxlifecycle"           : "com.trello.rxlifecycle2:rxlifecycle:${android["VRxlifecycle2"]}",
+            "rxlifecycle-android"   : "com.trello.rxlifecycle2:rxlifecycle-android:${android["VRxlifecycle2"]}",
+            "rxlifecycle-components": "com.trello.rxlifecycle2:rxlifecycle-components:${android["VRxlifecycle2"]}",
+            "rxjava"                : "io.reactivex.rxjava2:rxjava:${android["VRxjava"]}",
+            "rxandroid"             : "io.reactivex.rxjava2:rxandroid:${android["VRxjava"]}",
+            "rxpermissions"         : "com.tbruyelle.rxpermissions2:rxpermissions:${android["VRxpermissions"]}",
+            "xlog"                  : "com.elvishew:xlog:${android["VXlog"]}",
+            "okhttp"                : "com.squareup.okhttp3:okhttp:${android["VOkhttp"]}",
+            "retrofit"              : "com.squareup.retrofit2:retrofit:${android["VRetrofit"]}",
+            "gson"                  : "com.google.code.gson:gson:${android["VGson"]}",
+            "butterknife"           : "com.jakewharton:butterknife:${android["VButterknife"]}",
+            "butterknife-compiler"  : "com.jakewharton:butterknife-compiler:${android["VButterknife"]}",
+            "eventbus"              : "org.greenrobot:eventbus:${android["VEventbus"]}",
+            "glide"                 : "com.github.bumptech.glide:glide:${android["VGlide"]}",
+            "glide-compiler"        : "com.github.bumptech.glide:compiler:${android["VGlide"]}",
+            "multidex"              : "com.android.support:multidex:${android["VMultidex"]}",
+    ]
+
+}
