@@ -27,7 +27,7 @@ import com.example.framework.mvp.XActivity;
  * @date 2016/5/3
  */
 public abstract class BaseActivity<B extends ViewDataBinding, P extends IPresent> extends XActivity<B, P> {
-//    protected LoadingDialog loading;//加载框
+    //    protected LoadingDialog loading;//加载框
     public int idFrame = -1;
 
 
@@ -72,18 +72,7 @@ public abstract class BaseActivity<B extends ViewDataBinding, P extends IPresent
 
     @Override
     public void onBackPressed() {
-        if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
-            finish();
-            return;
-        }
-        try {
-            BaseFragment fragment = (BaseFragment) getSupportFragmentManager().findFragmentById(idFrame);
-            if (fragment != null) {
-                fragment.toBackFragment();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        removeFragment();
     }
 
     /**

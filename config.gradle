@@ -1,25 +1,26 @@
 ext {
     android = [
-            compileSdkVersion: 27,
-            buildToolsVersion: "27.0.3",
-            minSdkVersion    : 17,
-            targetSdkVersion : 27,
-            versionCode      : 1,
-            versionName      : '1.0.0',
-            VSupportSdk      : '27.0.2',
-            VConstraintLayout: '1.0.2',
+            compileSdkVersion  : 27,
+            buildToolsVersion  : "27.0.3",
+            minSdkVersion      : 17,
+            targetSdkVersion   : 27,
+            versionCode        : 1,
+            versionName        : '1.0.0',
+            VSupportSdk        : '27.0.2',
+            VConstraintLayout  : '1.0.2',
 
-            VRxlifecycle2    : '2.0.1',
-            VRxjava          : '2.0.1',
-            VRxpermissions   : '0.9.5@aar',
-            VXlog            : '1.4.0',
-            VOkhttp          : '3.10.0',
-            VRetrofit        : '2.4.0',
-            VGson            : '2.8.4',
-            VButterknife     : '8.8.1',
-            VEventbus        : '3.1.1',
-            VGlide           : '4.7.1',
-            VMultidex        : '1.0.2',
+            VRxlifecycle2      : '2.0.1',
+            VRxjava            : '2.0.1',
+            VRxpermissions     : '0.9.5@aar',
+            VXlog              : '1.4.0',
+            VOkhttp            : '3.10.0',
+            VRetrofit          : '2.4.0',
+            VGson              : '2.8.4',
+            VButterknife       : '8.8.1',
+            VEventbus          : '3.1.1',
+            VGlide             : '4.7.1',
+            VMultidex          : '1.0.2',
+            VSmartRefreshLayout: '1.0.3',
     ]
 
     dependencies = [
@@ -43,6 +44,7 @@ ext {
             "glide"                 : "com.github.bumptech.glide:glide:${android["VGlide"]}",
             "glide-compiler"        : "com.github.bumptech.glide:compiler:${android["VGlide"]}",
             "multidex"              : "com.android.support:multidex:${android["VMultidex"]}",
+            "smartRefreshLayout"    : "com.scwang.smartrefresh:SmartRefreshLayout:${android["VSmartRefreshLayout"]}",
     ]
 
 }

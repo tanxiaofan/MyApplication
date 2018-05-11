@@ -46,4 +46,5 @@ dependencies {
     compile rootProject.ext.dependencies["glide"]
     annotationProcessor rootProject.ext.dependencies["glide-compiler"]
     compile rootProject.ext.dependencies["multidex"]
+    compile rootProject.ext.dependencies["smartRefreshLayout"]
 }
