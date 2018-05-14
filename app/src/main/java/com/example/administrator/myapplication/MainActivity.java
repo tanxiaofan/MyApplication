@@ -1,22 +1,30 @@
 package com.example.administrator.myapplication;
 
 import android.os.Build;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.administrator.myapplication.databinding.ActivityMainBinding;
+import com.example.framework.base.BaseActivity;
+import com.example.framework.mvp.XPresent;
 
-    private TextView txtDetail;
+public class MainActivity extends BaseActivity<ActivityMainBinding, XPresent> {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        txtDetail = findViewById(R.id.detail);
+    public int initFrameID() {
+        return 0;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void bindUI(View rootView) {
+        super.bindUI(rootView);
     }
 
     @Override
@@ -48,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 "\n" +
                 "sw:" + sw +
                 "\n";
-        txtDetail.setText(detail);
+        binding.detail.setText(detail);
     }
 
     private void setWindowAlpha(float alpha) {
@@ -58,5 +66,4 @@ public class MainActivity extends AppCompatActivity {
         wl.alpha = alpha;//这句就是设置窗口里控件的透明度的．０.０全透明．１.０不透明．
         window.setAttributes(wl);
     }
-
 }

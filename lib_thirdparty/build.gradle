@@ -47,4 +47,5 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["glide-compiler"]
     compile rootProject.ext.dependencies["multidex"]
     compile rootProject.ext.dependencies["smartRefreshLayout"]
+    compile rootProject.ext.dependencies["Android-PickerView"]
 }

@@ -21,6 +21,7 @@ ext {
             VGlide             : '4.7.1',
             VMultidex          : '1.0.2',
             VSmartRefreshLayout: '1.0.3',
+            VAndroidPickerView : '4.1.3',
     ]
 
     dependencies = [
@@ -45,6 +46,7 @@ ext {
             "glide-compiler"        : "com.github.bumptech.glide:compiler:${android["VGlide"]}",
             "multidex"              : "com.android.support:multidex:${android["VMultidex"]}",
             "smartRefreshLayout"    : "com.scwang.smartrefresh:SmartRefreshLayout:${android["VSmartRefreshLayout"]}",
+            "Android-PickerView"    : "com.contrarywind:Android-PickerView:${android["VAndroidPickerView"]}",
     ]
 
 }
