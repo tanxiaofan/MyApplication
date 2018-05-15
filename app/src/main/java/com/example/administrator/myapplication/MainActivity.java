@@ -1,16 +1,23 @@
 package com.example.administrator.myapplication;
 
 import android.os.Build;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.administrator.myapplication.bean.Student;
 import com.example.administrator.myapplication.databinding.ActivityMainBinding;
 import com.example.framework.base.BaseActivity;
 import com.example.framework.mvp.XPresent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends BaseActivity<ActivityMainBinding, XPresent> {
+    StudentAdapter adapter;
 
     @Override
     public int initFrameID() {
@@ -25,6 +32,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, XPresent> {
     @Override
     public void bindUI(View rootView) {
         super.bindUI(rootView);
+        test();
     }
 
     @Override
@@ -65,5 +73,26 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, XPresent> {
         wl.flags = WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
         wl.alpha = alpha;//这句就是设置窗口里控件的透明度的．０.０全透明．１.０不透明．
         window.setAttributes(wl);
+    }
+
+    private void test() {
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+        adapter = new StudentAdapter();
+        binding.rv.setAdapter(adapter);
+        binding.rv.setLayoutManager(layoutManager);
+        List<Student> list = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            Student s = new Student("name" + i, 20);
+            list.add(s);
+        }
+        adapter.setData(list);
+    }
+
+    public void onClickEvent(View view) {
+        switch (view.getId()) {
+            case R.id.btn_clear:
+                adapter.setData(new ArrayList<>());
+                break;
+        }
     }
 }
