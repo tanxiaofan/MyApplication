@@ -12,6 +12,7 @@ import com.example.administrator.myapplication.bean.Student;
 import com.example.administrator.myapplication.databinding.ActivityMainBinding;
 import com.example.framework.base.BaseActivity;
 import com.example.framework.mvp.XPresent;
+import com.example.framework.recylerview.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,6 +87,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, XPresent> {
             list.add(s);
         }
         adapter.setData(list);
+        adapter.setOnClickPresenter((student, v, position) -> {
+            //
+        });
     }
 
     public void onClickEvent(View view) {

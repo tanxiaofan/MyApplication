@@ -17,6 +17,8 @@ import java.util.List;
 public abstract class SimpleAdapter<B extends ViewDataBinding, T> extends RecyclerView.Adapter<SimpleViewHolder<B>> {
 
     private List<T> data = new ArrayList<>();
+    private OnClickPresenter<T> onClickPresenter;
+    private OnLongClickPresenter<T> onLongClickPresenter;
 
     @Override
     public SimpleViewHolder<B> onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -53,7 +55,6 @@ public abstract class SimpleAdapter<B extends ViewDataBinding, T> extends Recycl
         setData(Arrays.asList(array));
     }
 
-
     public void clearData() {
         data.clear();
         notifyDataSetChanged();
@@ -72,5 +73,21 @@ public abstract class SimpleAdapter<B extends ViewDataBinding, T> extends Recycl
     public void updateData(T t, int position) {
         data.set(position, t);
         notifyDataSetChanged();
+    }
+
+    public interface OnClickPresenter<T> {
+        void onClick(T t, View v, int position);
+    }
+
+    public interface OnLongClickPresenter<T> {
+        void onLongClick(T t, View v, int position);
+    }
+
+    public void setOnClickPresenter(OnClickPresenter<T> onClickPresenter) {
+        this.onClickPresenter = onClickPresenter;
+    }
+
+    public void setOnLongClickPresenter(OnLongClickPresenter<T> onLongClickPresenter) {
+        this.onLongClickPresenter = onLongClickPresenter;
     }
 }
