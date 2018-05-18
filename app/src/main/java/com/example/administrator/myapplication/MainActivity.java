@@ -10,6 +10,7 @@ import android.view.WindowManager;
 
 import com.example.administrator.myapplication.bean.Student;
 import com.example.administrator.myapplication.databinding.ActivityMainBinding;
+import com.example.administrator.myapplication.databinding.ItemMyStudentBinding;
 import com.example.framework.base.BaseActivity;
 import com.example.framework.mvp.XPresent;
 import com.example.framework.recylerview.SimpleAdapter;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, XPresent> {
-    StudentAdapter adapter;
+    SimpleAdapter<ItemMyStudentBinding, Student> adapter;
 
     @Override
     public int initFrameID() {
@@ -78,11 +79,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, XPresent> {
 
     private void test() {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-        adapter = new StudentAdapter();
+        adapter = new MyStudentAdapter();
         binding.rv.setAdapter(adapter);
         binding.rv.setLayoutManager(layoutManager);
         List<Student> list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             Student s = new Student("name" + i, 20);
             list.add(s);
         }

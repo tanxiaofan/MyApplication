@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/stu_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/stu_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_expand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="展开" />
+
+        <Button
+            android:id="@+id/btn_hide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="隐藏" />
+
+    </LinearLayout>
+</layout>
