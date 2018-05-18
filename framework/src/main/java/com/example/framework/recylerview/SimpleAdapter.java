@@ -22,7 +22,7 @@ public abstract class SimpleAdapter<B extends ViewDataBinding, T> extends Recycl
 
     @Override
     public SimpleViewHolder<B> onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(viewType, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
         return new SimpleViewHolder<>(view);
     }
 
